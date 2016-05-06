@@ -225,6 +225,7 @@ bar {
 
 #Lock the screen
 bindsym $mod+shift+x exec i3lock -c 000000 
+bindcode 150 exec i3lock -c 000000
 
 #Blur the screen
 bindsym $winKey+Control+l exec .config/i3/lock.sh 
@@ -252,8 +253,9 @@ exec_always exec compton -f
 exec_always feh --bg-scale /home/tomer/Pictures/Wallpapers/wallpaper.jpg 
 
 #Language keys change
-exec_always setxkbmap -option grp:win_space_toggle us,il
 exec_always setxkbmap -option grp:caps_toggle us,il
+exec_always setxkbmap -option grp:win_space_toggle us,il
+
 
 
 #Chrome
@@ -283,5 +285,21 @@ exec workrave
 #Screenshots
 bindsym Print exec shutter -a
 bindsym Shift+Print exec shutter -s
+
+#Assign volume buttons
+bindcode 121 exec amixer -D pulse sset Master 0
 bindcode 122 exec amixer -D pulse sset Master 5%-
 bindcode 123 exec amixer -D pulse sset Master 5%+
+
+#Assign mouse buttons
+bindmouse button8 exec xdotool click 1 && xdotool click 1
+
+#Assign media buttons
+bindcode 172 exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindcode 171 exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindcode 173 exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+#Set default sound output
+exec_always pactl set-default-sink alsa_output.usb-Logitech_Logitech_G930_Headset-00.analog-stereo
+bindcode 75 exec /home/tomer/.scripts/switch_output.sh 
+
