@@ -228,7 +228,8 @@ bindsym $mod+shift+x exec i3lock -c 000000
 bindcode 150 exec i3lock -c 000000
 
 #Blur the screen
-bindsym $winKey+Control+l exec .config/i3/lock.sh 
+bindsym $mod+shift+Escape exec .config/i3/lock.sh 
+
 
 #Alternative terminal command
 #bindsym $Control+Mod1+t exec gnome-terminal
@@ -237,14 +238,14 @@ bindsym $winKey+Control+l exec .config/i3/lock.sh
 bindsym $mod+Shift+m exec pavucontrol
 
 #Open pavucontrol on start
-exec pavucontrol
+#exec pavucontrol
 
 #Rearranging monitors
 exec_always /home/tomer/.screenlayout/monitors-rearrange.sh
 
 # start dmenu (a program launcher)
-bindsym $winKey+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindmouse Button10 exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 #Compton
 exec_always exec compton -f
@@ -282,6 +283,9 @@ exec teamspeak3
 #Workrave
 exec workrave
 
+#XbindKeys
+exec_always xbindkeys
+
 #Screenshots
 bindsym Print exec shutter -a
 bindsym Shift+Print exec shutter -s
@@ -291,6 +295,10 @@ bindcode 121 exec amixer -D pulse sset Master 0
 bindcode 122 exec amixer -D pulse sset Master 5%-
 bindcode 123 exec amixer -D pulse sset Master 5%+
 
+#Assign volume buttons with super key
+bindcode $mod+f3 exec amixer -D pulse sset Master 5%+
+bindcode 133+68 exec amixer -D pulse sset Master 5%-
+
 #Assign mouse buttons
 bindmouse button8 exec xdotool click 1 && xdotool click 1
 
@@ -298,8 +306,10 @@ bindmouse button8 exec xdotool click 1 && xdotool click 1
 bindcode 172 exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindcode 171 exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 bindcode 173 exec qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindcode 171+173 exec /home/tomer.scripts/switch_output.sh
+
 
 #Set default sound output
 exec_always pactl set-default-sink alsa_output.usb-Logitech_Logitech_G930_Headset-00.analog-stereo
-bindcode 75 exec /home/tomer/.scripts/switch_output.sh 
 
+bindcode 75 exec /home/tomer/.scripts/switch_output.sh 
