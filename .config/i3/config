@@ -139,6 +139,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 #Assign apps to workspaces
 assign [class="Rhythmbox"] $ws4
 assign [class="Spotify"] $ws4
+
 assign [class="Steam"] $ws5
 assign [class="steam"] $ws5
 #assign [class="Pantheon-terminal"] $ws2
@@ -257,7 +258,6 @@ exec_always setxkbmap -option grp:caps_toggle us,il
 exec_always setxkbmap -option grp:win_space_toggle us,il
 
 
-
 #Chrome
 exec google-chrome-stable
 
@@ -284,6 +284,9 @@ exec workrave
 
 #XbindKeys
 exec_always xbindkeys
+
+#Gnome-PIE
+exec_always gnome-pie -o
 
 #Screenshots
 bindsym Print exec shutter -a
