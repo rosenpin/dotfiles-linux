@@ -286,7 +286,7 @@ exec workrave
 exec_always xbindkeys
 
 #Gnome-PIE
-exec_always gnome-pie -o
+exec gnome-pie -o
 
 #Screenshots
 bindsym Print exec shutter -a
