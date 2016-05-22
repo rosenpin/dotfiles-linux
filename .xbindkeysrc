@@ -3,8 +3,19 @@
  b:10
 
 #Zoom button
-"xte 'keydown Control_L'"
+"xte 'keydown Control_L' 'key w' 'keyup Control_L'" 
  b:13
+
+#Back button
+"xte 'keydown Control_L' 'key Tab' 'keyup Control_L'"
+ b:8
+
+
+#For button
+"xte 'keydown Control_L' 'keydown Shift_L' 'key Tab' 'keyup Control_L' 'keyup Shift_L'"
+ b:9
+
+
 
 # Back
 #"xte 'keydown Alt_L' 'key Left' 'keyup Alt_L'"
