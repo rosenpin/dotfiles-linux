@@ -144,7 +144,7 @@ assign [class="Steam"] $ws5
 assign [class="steam"] $ws5
 #assign [class="Pantheon-terminal"] $ws2
 assign [class="google-chrome"] $ws4
-assign [class="Firefox"] $ws1
+#assign [class="Firefox"] $ws1
 assign [class="Pavucontrol"] $ws4
 assign [class="Franz"] $ws6
 assign [class="TeamSpeak 3"] $ws6
@@ -286,6 +286,9 @@ exec workrave
 
 #XbindKeys
 exec_always xbindkeys
+
+#Whatsapp client
+exec whatsie --os-startup
 
 #Gnome-PIE
 exec gnome-pie -o
