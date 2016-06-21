@@ -147,6 +147,8 @@ assign [class="google-chrome"] $ws4
 #assign [class="Firefox"] $ws1
 assign [class="Pavucontrol"] $ws4
 assign [class="Franz"] $ws6
+assign [class="telegram-desktop"] $ws6
+assign [class="Whatsie"] $ws6
 assign [class="TeamSpeak 3"] $ws6
 assign [class="jetbrains-studio"] $ws3
 assign [class="jetbrains-webstorm"] $ws3
@@ -261,7 +263,7 @@ exec_always setxkbmap -option grp:win_space_toggle us,il
 exec_always /home/tomer/.scripts/disable_caps.sh
 
 #Chrome
-exec google-chrome-stable
+#exec google-chrome-stable
 
 #Spotify
 exec spotify --force-device-scale-factor=1.0000001  
@@ -273,13 +275,11 @@ exec steam
 exec firefox
 
 #Franz - social
-exec franz
+#exec franz
 
 #Mouseserver
 exec mouseserver
 
-#TeamSpeak3
-exec teamspeak3
 
 #Workrave
 exec workrave
@@ -292,6 +292,9 @@ exec whatsie --os-startup
 
 #Gnome-PIE
 exec gnome-pie -o
+
+#Solaar 
+exec solaar
 
 #Screenshots
 bindsym Print exec shutter -a
