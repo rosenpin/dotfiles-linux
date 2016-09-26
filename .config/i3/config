@@ -95,19 +95,19 @@ bindsym $mod+a focus parent
 
 #vars
 #General Surfing
-set $ws1 "1: " 
+set $ws1 "1" 
 #Terminals
-set $ws2 "2: " 
+set $ws2 "2" 
 #Code
-set $ws3 "3: " 
+set $ws3 "3" 
 #Media
-set $ws4 "4: "
+set $ws4 "4"
 #Games
-set $ws5 "5: "
+set $ws5 "5"
 #Social 
-set $ws6 "6: "
+set $ws6 "6"
 #Reserch 
-set $ws7 "7: " 
+set $ws7 "7" 
 #Remote control
 set $ws10 "Remote Control"
 
