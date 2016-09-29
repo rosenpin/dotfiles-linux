@@ -124,6 +124,16 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace $ws10
 
+#Hardware buttons
+bindcode $mod+72 exec xbacklight -inc 2 # increase screen brightness
+bindcode $mod+71 exec xbacklight -dec 2 # decrease screen brightness
+
+#Disable trackpad while typing
+exec syndaemon -d -i 1.0 -K -R -t
+
+#Keyboard rep delay
+exec xset r rate 200 25 
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -197,7 +207,7 @@ bindsym $mod+r mode "resize"
 #}
 
 
-set $bg-color 	         #2f343f
+set $bg-color 	         #263238
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
@@ -247,13 +257,16 @@ bindsym $mod+Shift+m exec pavucontrol
 exec_always /home/tomer/.screenlayout/monitors-rearrange.sh
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 480 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "#607d8b" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 #Compton
 exec_always exec compton -f
 
 #Setting wallpaper
-exec_always feh --bg-scale /home/tomer/Pictures/Wallpapers/wallpaper.jpg 
+exec feh --bg-scale /home/tomer/Pictures/wallpaper_c.png 
+
+#Natural scrolling
+exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
 #Language keys change
 exec_always setxkbmap -option grp:caps_toggle us,il
