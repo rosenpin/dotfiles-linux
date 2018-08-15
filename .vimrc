@@ -27,7 +27,5 @@ Plug 'fatih/vim-go'
 call plug#end()
 " Show tree of files
 map <C-n> :NERDTreeToggle<CR>
-" GO run shortcut
-map <C-F10> :! go run %<CR>
 filetype plugin on
 map <Tab> <C-x><C-o>
