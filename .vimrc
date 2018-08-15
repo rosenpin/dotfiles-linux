@@ -1,3 +1,4 @@
+:let mapleader  = " "
 " Drop competability
 set nocompatible
 " Syntax highlighting on
@@ -18,14 +19,23 @@ set tabstop=4
 set shiftwidth=4
 " Set up the plugins
 call plug#begin('~/.vim/plugged')
-Plug 'vim-scripts/AutoComplPop'
+Plug 'tomasiser/vim-code-dark'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-" Plug 'ervandew/supertab'
-" Plug 'nsf/gocode'
-Plug 'fatih/vim-go'
+Plug 'tpope/vim-fugitive'
+Plug 'ervandew/supertab'
 call plug#end()
-" Show tree of files
+"Set the color scheme
+colorscheme codedark
+" Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+" GO run shortcut
+map <C-F10> :! go run %<CR>
 filetype plugin on
 map <Tab> <C-x><C-o>
+
+" Copy and past to and from system clipboard
+noremap <Leader>y "+y
+noremap <Leader>p "+p
