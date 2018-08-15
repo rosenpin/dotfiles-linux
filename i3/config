@@ -193,9 +193,6 @@ exec pacmd set-sink-mute 1 false
 #Set Fn+F9 to change sound output device
 bindcode 75 exec /home/tomer/.scripts/switch_output.sh 
 
-# Compile always on amoled automatically
-bindsym $mod+Shift+a exec  terminator --command="cd ~/Projects/Android/AlwaysOnAMOLEDbit && ./uploadproguard.sh"
-
 #gaps
 gaps inner 10
 gaps outer 6
