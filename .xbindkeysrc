@@ -1,0 +1,20 @@
+#Zoom button
+"xte 'keydown Control_L' 'key w' 'keyup Control_L'" 
+ b:13
+
+#Back button
+"xte 'keydown Control_L' 'key Tab' 'keyup Control_L'"
+ b:9
+
+#For button
+"xte 'keydown Control_L' 'keydown Shift_L' 'key Tab' 'keyup Control_L' 'keyup Shift_L'"
+ b:8
+
+#Scroll wheel right
+"xte 'key Right'"
+ b:7
+
+#Scroll wheel left
+"xte 'key Left'"
+ b:6
+
