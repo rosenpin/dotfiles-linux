@@ -26,9 +26,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
-"Set the color scheme
-colorscheme codedark
+" Theme
+set background=dark
+colorscheme PaperColor
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 " GO run shortcut
