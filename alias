@@ -1,0 +1,33 @@
+# ADB
+alias restart-adb='sudo adb kill-server && sudo adb start-server'
+alias adb-restart='adb kill-server && adb start-server'
+
+# Arch specific
+alias remove-shit='sudo pacman -R $(pacman -Qdtq) && yay -Sc'
+alias clear-lock='sudo rm -rf /var/lib/pacman.db.lck'
+alias update-system='yay -Syu --noconfirm && upgrade_oh_my_zsh'
+
+# TunnelBear VPN
+alias start-vpn='sudo systemctl start openvpn-client@TunnelBearUS.service'
+alias stop-vpn='sudo systemctl stop openvpn-client@TunnelBearUS.service'
+
+# Fuck commands correction
+eval $(thefuck --alias) 
+
+# ETC
+alias remove-git-cache='git rm -r --cached .'
+alias :q='exit'
+alias c='clear'
+alias download-song='youtube-dl -x --audio-format mp3'
+
+
+#################################
+#  Replace Programs I'm Used to #
+#################################
+# Ag instead of grep
+alias grep='ag'
+
+# Nvim instead of vim
+alias vim-old='vim'
+alias vim='nvim'
+

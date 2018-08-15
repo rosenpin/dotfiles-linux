@@ -2,12 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/tomer/.oh-my-zsh
+export ZSH=/home/tomer/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="refined"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -80,36 +80,17 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias restart-adb='sudo adb kill-server && sudo adb start-server'
-alias adb-restart='adb kill-server && adb start-server'
-alias remove-shit='sudo pacman -R $(pacman -Qdtq) && yay -Sc'
-alias start-vpn='sudo systemctl start openvpn-client@TunnelBearUS.service'
-alias stop-vpn='sudo systemctl stop openvpn-client@TunnelBearUS.service'
-alias please='sudo'
-#Fuck
-eval $(thefuck --alias) 
-#alias vpnconnect='sudo openvpn /etc/openvpn/us-18.protonvpn.com.udp1194.ovpn'
-alias remove-git-cache='git rm -r --cached .'
-alias clear-lock='sudo rm -rf /var/lib/pacman.db.lck'
-alias :q='exit'
-alias update-system="yay -Syu --noconfirm && upgrade_oh_my_zsh"
-alias download-song="youtube-dl -x --audio-format mp3"
+source ~/dotfiles/alias
+
 export EDITOR="/usr/bin/vim"
 export HISTFILESIZE=10000
 export HISTSIZE=1000000
 #GO vars
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$(go env GOPATH)/bin
-# Ag instead of grep
-alias grep='ag'
-# Nvim instead of vim
-alias vim-old='vim'
-alias vim='nvim'
 #Emcas mode
 bindkey -e
 #Auto suggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
