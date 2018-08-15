@@ -21,20 +21,4 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # User configuration
-# Use my aliases
-source ~/dotfiles/alias
-
-export EDITOR="/usr/bin/nvim"
-export HISTFILESIZE=10000
-export HISTSIZE=1000000
-
-# GO vars
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$(go env GOPATH)/bin
-
-# Emcas mode in terminal
-bindkey -e
-
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
+source ~/dotfiles/zshuser
