@@ -50,7 +50,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
-modules-right = xkeyboard date
+modules-right = xkeyboard date battery
 modules-center = hour
 tray-position = null
 tray-padding = 2
@@ -71,6 +71,17 @@ tray-background = #77121212
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC0
+
+poll-interval = 5
 
 [module/xkeyboard]
 type = internal/xkeyboard
