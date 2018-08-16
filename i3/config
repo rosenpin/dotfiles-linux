@@ -174,4 +174,4 @@ gaps outer 6
 new_window none
 
 # Run initialization script
-exec ~/dotfiles/scripts/initialize
+exec sh $HOME/dotfiles/scripts/initialize
