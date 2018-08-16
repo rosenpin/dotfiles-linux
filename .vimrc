@@ -1,12 +1,17 @@
 :let mapleader  = " "
 " Drop competability
 set nocompatible
+filetype off
 " Syntax highlighting on
 syntax on
 " Show line numbers
 set number 
 " Set the path recursively
 set path+=**
+" Auto load file changes
+set autoread
+" Show at least one line before and after the current line
+set scrolloff=3
 " Display all matching files
 set wildmenu
 " Tabs to spcaes
@@ -18,24 +23,26 @@ set tabstop=4
 " When indenting with '>' use 4 spaces 
 set shiftwidth=4
 " Set up the plugins
-call plug#begin('~/.vim/plugged')
-Plug 'tomasiser/vim-code-dark'
-Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'ervandew/supertab'
-Plug 'NLKNguyen/papercolor-theme'
-call plug#end()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'dracula/vim'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ervandew/supertab'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+call vundle#end()            
+filetype plugin indent on   
 " Theme
-set background=dark
-colorscheme PaperColor
+color dracula
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 " GO run shortcut
 map <C-F10> :! go run %<CR>
-filetype plugin on
 map <Tab> <C-x><C-o>
 
 " Copy and past to and from system clipboard

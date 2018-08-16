@@ -11,7 +11,10 @@ HYPHEN_INSENSITIVE="true"
 export UPDATE_ZSH_DAYS=5
 
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    zsh-syntax-highlighting
+)
 
 # Oh my zsh
 source $ZSH/oh-my-zsh.sh
