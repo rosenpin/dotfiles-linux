@@ -29,10 +29,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'dracula/vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 call vundle#end()            
@@ -44,7 +41,9 @@ map <C-n> :NERDTreeToggle<CR>
 " GO run shortcut
 map <C-F10> :! go run %<CR>
 map <Tab> <C-x><C-o>
+" FZF
+map <C-\> :FZF<CR>
 
-" Copy and past to and from system clipboard
+" Copy and paste to and from system clipboard
 noremap <Leader>y "+y
 noremap <Leader>p "+p
