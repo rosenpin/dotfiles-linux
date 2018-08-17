@@ -56,6 +56,9 @@ ln -s -f ~/dotfiles/alacritty ~/.config/alacritty/alacritty.yml
 ```
 ln -s -f ~/dotfiles/i3 ~/.config/i3
 ```
+For rofi
+* Install rofi
+* Install this theme https://github.com/ricwtk/rofi-themes (or just copy the input-emph-nobar.rasi file to your ~/.local/share/rofi/themes/input-emph-nobar.rasi)
 
 ### xbindkeys
 ```
