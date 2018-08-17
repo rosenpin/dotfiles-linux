@@ -24,3 +24,5 @@ setxkbmap -option grp:win_space_toggle us,il &
 # Set a random wallpaper
 feh --randomize --bg-scale $HOME/Pictures/Walls/* &
 
+# Start compton
+compton -f &
