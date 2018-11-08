@@ -25,4 +25,4 @@ setxkbmap -option grp:win_space_toggle us,il &
 feh --randomize --bg-scale $HOME/Pictures/Walls/* &
 
 # Start compton
-compton -f &
+compton -f --config $HOME/.config/compton.conf &

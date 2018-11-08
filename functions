@@ -1,0 +1,3 @@
+function disk-usage(){
+    du -hs $@ | sort -h
+}

@@ -1,6 +1,4 @@
-# Use my aliases
-source ~/dotfiles/alias
-
+export DOTFILES=$HOME/dotfiles
 export EDITOR="/usr/bin/nvim"
 export HISTFILESIZE=10000
 export HISTSIZE=1000000
@@ -11,6 +9,9 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 # Emcas mode in terminal
 bindkey -e
+
+# Use my aliases
+source ~/dotfiles/alias
 
 if command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux -2
