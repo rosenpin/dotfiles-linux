@@ -1,0 +1,5 @@
+cd /tmp
+spotdl -f /home/tomer/NextcloudSync/Music/ --playlist https://open.spotify.com/user/rosenpin/playlist/7jPypUU0FoNMhB0y7nh8Tf\?si\=MmFf_W4nSGGTippdBY1HEw
+yes N | spotdl --overwrite skip -f /home/tomer/NextcloudSync/Music/  --list new-playlist.txt 
+cp /home/tomer/Music/*.mp3 /home/tomer/Nextcloud/Music/
+owncloudcmd -n NextcloudSync rosenpin@10.0.0.12/nextcloud/remote.php/webdav/ 

@@ -1,0 +1,14 @@
+# Layout change using caps lock/super+space
+setxkbmap -option grp:caps_toggle us,il 
+setxkbmap -option grp:win_space_toggle us,il 
+echo "Success $(date)"
+
+# Need to add these lines to the xorg.conf file in /etc/X11/xorg.conf
+# Section "InputDevice"
+# 
+#    # generated from default
+#     Identifier     "Keyboard0"
+#     Driver         "kbd"
+#     Option "XkbLayout"     "us,es"
+#     Option "XkbOptions"    "grp:caps_toggle"
+# EndSection

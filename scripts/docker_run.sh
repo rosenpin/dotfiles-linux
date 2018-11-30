@@ -22,7 +22,7 @@ docker run -d \
     -e ServerIP="${IP}" \
     --restart=unless-stopped \
     --cap-add=NET_ADMIN \
-    --dns=127.0.0.1 --dns=1.1.1.1 \
+    --dns=8.8.8.8 --dns=1.1.1.1 \
     pihole/pihole:latest
 
 echo -n "Your password for https://${IP}/admin/ is "
