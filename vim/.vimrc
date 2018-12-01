@@ -37,6 +37,7 @@ Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()            
 filetype plugin indent on   
+color dracula
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 " GO run shortcut
