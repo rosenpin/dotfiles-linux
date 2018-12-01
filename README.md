@@ -19,46 +19,7 @@ git submodule init
 git submodule update
 ```
 
-### Tmux
-```
-stow tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
+### Installation
+./install will stow all the dirs and install misc programs like the tmux plugin, zsh auto complete...
+
 Kill tmux, open it, press `prefix` + <kbd>I</kbd> 
-
-### Vim
-```
-stow vim
-```
-
-### ZSH
-```
-stow zsh
-```
-For the spaceship theme
-```
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-```
-For the autocomplete
-```
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
-
-### Alacritty
-```
-stow config
-```
-
-### i3
-```
-stow config
-```
-For rofi
-* Install rofi
-* Install this theme https://github.com/ricwtk/rofi-themes (or just copy the input-emph-nobar.rasi file to your ~/.local/share/rofi/themes/input-emph-nobar.rasi)
-
-### xbindkeys
-```
-ln -s -f ~/dotfiles/.xbindkeysrc ~/.xbindkeysrc
-```
