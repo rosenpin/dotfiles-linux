@@ -1,4 +1,5 @@
-:let mapleader  = " "
+nnoremap <SPACE> <Nop>
+let mapleader  = "\<Space>"
 " Drop competability
 set nocompatible
 filetype off
@@ -26,18 +27,16 @@ set shiftwidth=4
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'dracula/vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
-Plugin 'arcticicestudio/nord-vim'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()            
 filetype plugin indent on   
-" Theme
-colorscheme nord
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 " GO run shortcut

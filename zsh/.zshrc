@@ -3,7 +3,7 @@ export ZSH=/home/tomer/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 ZSH_THEME="spaceship"
-source ~/dotfiles/zshthemes/spaceship.config
+source ~/.zshthemes/spaceship.config
 
 # Ignore - in correction/completion
 HYPHEN_INSENSITIVE="true"
@@ -20,8 +20,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 #Auto suggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # User configuration
-source ~/dotfiles/zshuser
+source ~/.zshuser
