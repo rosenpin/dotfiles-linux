@@ -9,3 +9,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # Tmux tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Rofi
+mkdir -p $HOME/.local/share/rofi/themes/
+curl https://github.com/ricwtk/rofi-themes/input-emph-nobar.rasi -o $HOME/.local/share/rofi/themes/input-emph-nobar.rasi
