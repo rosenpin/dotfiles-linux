@@ -1,0 +1,1 @@
+for dirname in */ ; do stow "$dirname"; done

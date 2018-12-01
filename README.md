@@ -21,21 +21,19 @@ git submodule update
 
 ### Tmux
 ```
-ln -s -f ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s -f ~/dotfiles/.tmux ~/.tmux
+stow tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 Kill tmux, open it, press `prefix` + <kbd>I</kbd> 
 
 ### Vim
 ```
-ln -s -f ~/dotfiles/.vimrc ~/.vimrc
+stow vim
 ```
 
 ### ZSH
 ```
-ln -s -f ~/dotfiles/.zshrc ~/.zshrc
-ln -s -f ~/dotfiles/.zprofile ~/.zprofile
+stow zsh
 ```
 For the spaceship theme
 ```
@@ -49,12 +47,12 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 ### Alacritty
 ```
-ln -s -f ~/dotfiles/alacritty ~/.config/alacritty/alacritty.yml
+stow config
 ```
 
 ### i3
 ```
-ln -s -f ~/dotfiles/i3 ~/.config/i3
+stow config
 ```
 For rofi
 * Install rofi

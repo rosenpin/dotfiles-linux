@@ -14,7 +14,7 @@ redshift -l 32.111169:34.835021 &
 # Show status bar
 sh $HOME/.scripts/polybar-run.sh &
 
-sh $HOME/dotfiles/scripts/caps_lock_remap &
+sh $HOME/.scripts/caps_lock_remap &
 
 # Set a random wallpaper
 feh --randomize --bg-scale $HOME/Pictures/Walls/* &
