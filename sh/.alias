@@ -21,6 +21,7 @@ alias disk-usage-all='disk-usage *'
 #################################
 #  Replace Programs I'm Used to #
 #################################
+alias vim='nvim'
 alias vi='vim'
 
 source $HOME/.functions

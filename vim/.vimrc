@@ -1,5 +1,4 @@
-nnoremap <SPACE> <Nop>
-let mapleader  = "\<Space>"
+let mapleader=" "
 " Drop competability
 set nocompatible
 filetype off
@@ -26,8 +25,9 @@ set shiftwidth=4
 " Set up the plugins
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'dracula/vim'
+Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
@@ -37,7 +37,9 @@ Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()            
 filetype plugin indent on   
-color dracula
+set t_Co=256
+set background=dark
+colorscheme PaperColor
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 " GO run shortcut
@@ -49,3 +51,24 @@ map <C-\> :FZF<CR>
 " Copy and paste to and from system clipboard
 noremap <Leader>y "+y
 noremap <Leader>p "+p
+
+" Shortcuts
+map <C-a> ^
+map <C-e> &
+
+" Splitting
+nnoremap ,s :vsplit<CR>
+nnoremap ,v :split<CR>
+
+" Vim GO and related settings
+set autowrite
+
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
+let g:go_fmt_command = "goimports"
+let g:go_auto_sameids = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1 
+let g:syntastic_check_on_wq = 1 
+let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']

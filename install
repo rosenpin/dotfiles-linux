@@ -19,4 +19,4 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Rofi
 echo "Installing rofi themes"
 mkdir -p $HOME/.local/share/rofi/themes/
-curl https://github.com/ricwtk/rofi-themes/input-emph-nobar.rasi -o $HOME/.local/share/rofi/themes/input-emph-nobar.rasi
+curl https://raw.githubusercontent.com/ricwtk/rofi-themes/master/input-emph-nobar.rasi -o $HOME/.local/share/rofi/themes/input-emph-nobar.rasi
