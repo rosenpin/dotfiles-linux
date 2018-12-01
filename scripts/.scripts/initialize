@@ -5,7 +5,6 @@ pacmd set-default-sink 1 &
 pacmd set-sink-mute 1 false &
 
 # Execute default programs on startup
-spotify &
 compton -f --config $HOME/.config/compton.conf &
 indicator-kdeconnect &
 xbindkeys &
