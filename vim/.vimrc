@@ -1,3 +1,4 @@
+map <Space> <Nop>
 let mapleader=" "
 " Drop competability
 set nocompatible
@@ -8,6 +9,8 @@ syntax on
 set number 
 " Set the path recursively
 set path+=**
+" Ignore case while searching
+set ignorecase
 " Auto load file changes
 set autoread
 " Show at least one line before and after the current line
@@ -25,28 +28,30 @@ set shiftwidth=4
 " Set up the plugins
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'SirVer/ultisnips'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ervandew/supertab'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/syntastic'
+Plugin 'shougo/deoplete.nvim'
 call vundle#end()            
+
+" Set up theme
 filetype plugin indent on   
 set t_Co=256
 set background=dark
 colorscheme PaperColor
+
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
-" GO run shortcut
-map <C-F10> :! go run %<CR>
-map <Tab> <C-x><C-o>
-" FZF
-map <C-\> :FZF<CR>
 
 " Copy and paste to and from system clipboard
 noremap <Leader>y "+y
@@ -54,11 +59,15 @@ noremap <Leader>p "+p
 
 " Shortcuts
 map <C-a> ^
-map <C-e> &
+map <C-e> $
 
 " Splitting
 nnoremap ,s :vsplit<CR>
 nnoremap ,v :split<CR>
+
+" GO run shortcut
+map <C-F10> :GoRun<CR>
+map <Tab> <C-x><C-o>
 
 " Vim GO and related settings
 set autowrite
@@ -72,3 +81,41 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1 
 let g:syntastic_check_on_wq = 1 
 let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
+
+" Vim airline
+let g:airline_theme='atomic'
+            
+" FZF
+nnoremap <silent> <C-Space> :FZF<CR>
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+" Ulti snip
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+call deoplete#custom#option({
+    \ 'auto_complete': v:false,
+\ })
+
+" Completion
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <C-N> <C-x><C-o>
+
+" CamelCaseMotion
+map <silent> <S-w> <Plug>CamelCaseMotion_w
+map <silent> <S-b> <Plug>CamelCaseMotion_b
+map <silent> <S-e> <Plug>CamelCaseMotion_e
+
