@@ -6,7 +6,7 @@ IP_LOOKUP="$(ip route get 8.8.8.8 | awk '{for(i=1;i<=NF;i++) if ($i=="src") prin
 IP="${IP:-$IP_LOOKUP}"  # use $IP, if set, otherwise IP_LOOKUP
 
 # Default of directory you run this from, update to where ever.
-DOCKER_CONFIGS="/home/tomer"
+DOCKER_CONFIGS=$HOME
 
 echo "### Make sure your IPs are correct, hard code ServerIP ENV VARs if necessary\nIP: ${IP}\nIPv6: ${IPv6}"
 
