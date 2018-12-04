@@ -10,9 +10,7 @@ Specifically optimised for my setup which includes:
 I'm using i3 over Arch
 
 ## Installation
-todo: I should add a full script to auto install the configuration, but for now:
 
-### General
 After cloning
 ```
 git submodule init
@@ -20,6 +18,6 @@ git submodule update
 ```
 
 ### Installation
-./install will stow all the dirs and install misc programs like the tmux plugin, zsh auto complete...
+```./install``` will stow all the dirs and install misc programs like the tmux plugin, zsh auto complete...
 
 Kill tmux, open it, press `prefix` + <kbd>I</kbd> 
