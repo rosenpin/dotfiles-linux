@@ -4,6 +4,8 @@ export HISTSIZE=1000000
 
 # GO vars
 export GOPATH=$(go env GOPATH)
+export GOBIN=$GOPATH/bin
+export GOSRC=$GOPATH/src
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # Emcas mode in terminal

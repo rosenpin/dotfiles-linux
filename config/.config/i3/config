@@ -176,6 +176,3 @@ new_window none
 # Run initialization script
 exec sh /home/tomer/.scripts/initialize
 
-# KDE Connect
-exec --no-startup-id /usr/lib/kdeconnectd
-

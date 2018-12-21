@@ -6,12 +6,13 @@ pacmd set-sink-mute 1 false &
 
 # Execute default programs on startup
 compton -f --config $HOME/.config/compton.conf &
-indicator-kdeconnect &
+/usr/lib/kdeconnectd &
+kdeconnect-cli &
 xbindkeys &
 redshift -l 32.111169:34.835021 &
 
 # Show status bar
-sh $HOME/.scripts/polybar-run.sh &
+sh $HOME/.scripts/restart_polybar.sh &
 
 sh $HOME/.scripts/caps_lock_remap &
 
@@ -20,3 +21,4 @@ feh --randomize --bg-scale $HOME/Pictures/Walls/* &
 
 # Start compton
 compton -f --config $HOME/.config/compton.conf &
+

@@ -1,3 +1,27 @@
 function disk-usage(){
     du -hs $@ | sort -h
 }
+
+function replace-all() {
+    echo $(grep -nrI $2)
+    find . -type f -name "*.$1" -exec sed -i "s/$2/$3/g" {} \;
+    echo $(grep -nrI $3)
+}
+
+alias ssh-rosenpin="ssh server@rosenpin.io"
+
+function deploy-rosenpin.io() {
+    echo "validating environment.."
+    ssh-rosenpin "mkdir -p /home/server/rosenpin.io/configs"
+    echo "killing server.."
+    ssh-rosenpin "sudo -S pkill rosenpin"
+    echo "building binary.."
+    go install gitlab.com/rosenpin/rosenpin.io/cmd/main
+    echo "pushing files.."
+    scp -r $GOSRC/gitlab.com/rosenpin/rosenpin.io/deployment/run.sh $GOSRC/gitlab.com/rosenpin/rosenpin.io/resources $GOBIN/rosenpin server@rosenpin.io:/home/server/rosenpin.io/
+    echo "pushing configs.."
+    scp -r $GOSRC/gitlab.com/rosenpin/rosenpin.io/configs/*.yml server@rosenpin.io:/home/server/rosenpin.io/configs/
+    echo "running server.."
+    ssh-rosenpin "sudo -S deploy-rosenpin.io"
+    echo "Done!"
+}
