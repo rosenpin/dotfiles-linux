@@ -5,11 +5,7 @@ pacmd set-default-sink 1 &
 pacmd set-sink-mute 1 false &
 
 # Execute default programs on startup
-compton -f --config $HOME/.config/compton.conf &
-/usr/lib/kdeconnectd &
-kdeconnect-cli &
 xbindkeys &
-redshift -l 32.111169:34.835021 &
 
 # Show status bar
 sh $HOME/.scripts/restart_polybar.sh &
@@ -17,8 +13,11 @@ sh $HOME/.scripts/restart_polybar.sh &
 sh $HOME/.scripts/caps_lock_remap &
 
 # Set a random wallpaper
-feh --randomize --bg-scale $HOME/Pictures/Walls/* &
+feh --randomize --bg-fill $HOME/Pictures/Walls/* &
 
 # Start compton
 compton -f --config $HOME/.config/compton.conf &
 
+#pkill redshift
+#redshift -m vidmode -PO 6500
+#redshift -m randr -l 32.111169:34.835021 &

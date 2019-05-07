@@ -8,10 +8,8 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #33000000
+background = #67000000
 background-alt = #77121212
-;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #00555
 primary = #ffb52a
@@ -21,9 +19,7 @@ alert = #bd2c40
 [bar/rightm]
 monitor = ${env:MONITOR}
 width = 100%
-height = 34 
-;offset-x = 1%
-;offset-y = 1%
+height = 43 
 radius = 0.0
 fixed-center = false
 scroll-up = i3wm-wsnext
@@ -50,23 +46,11 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
-modules-right = xkeyboard date battery
+modules-right = hdmi_pulseaudio xkeyboard date battery
 modules-center = hour
 tray-position = null
 tray-padding = 2
-;tray-transparent = true
 tray-background = #77121212
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 [module/xwindow]
 type = internal/xwindow
@@ -74,10 +58,7 @@ label = %title:0:30:...%
 
 [module/battery]
 type = internal/battery
-
 full-at = 99
-
-; $ ls -1 /sys/class/power_supply/
 battery = BAT0
 adapter = AC0
 
@@ -155,12 +136,6 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
 [module/date]
 type = internal/date
 interval = 1
@@ -196,13 +171,15 @@ label = %time%
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
 
-; vim:ft=dosini
+[module/hdmi_pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
+interval = 5
+label-muted = 🔇 muted
+label-muted-foreground = #ff0000
+

@@ -1,3 +1,7 @@
+#!/bin/bash
+
+alias send-files='rsync --delete-after --delete-excluded --progress -zr'
+
 function disk-usage(){
     du -hs $@ | sort -h
 }
@@ -8,20 +12,36 @@ function replace-all() {
     echo $(grep -nrI $3)
 }
 
-alias ssh-rosenpin="ssh server@rosenpin.io"
+alias ssh-rosenpin="ssh $WEBSITE"
 
 function deploy-rosenpin.io() {
-    echo "validating environment.."
-    ssh-rosenpin "mkdir -p /home/server/rosenpin.io/configs"
+    website_project_path="$GOSRC/gitlab.com/rosenpin/rosenpin.io"
     echo "killing server.."
-    ssh-rosenpin "sudo -S pkill rosenpin"
-    echo "building binary.."
-    go install gitlab.com/rosenpin/rosenpin.io/cmd/main
+    container_id=$(ssh-rosenpin "docker ps | grep rosenpin.io | cut -d' ' -f1")
+	echo $container_id
+    ssh-rosenpin "docker stop $container_id"
+    echo "building docker image.."
+    (cd $website_project_path && ./build | return 1) 
     echo "pushing files.."
-    scp -r $GOSRC/gitlab.com/rosenpin/rosenpin.io/deployment/run.sh $GOSRC/gitlab.com/rosenpin/rosenpin.io/resources $GOBIN/rosenpin server@rosenpin.io:/home/server/rosenpin.io/
+    send-rosenpin.io $website_project_path/rosenpin.tar.gz rosenpin.tar.gz 
     echo "pushing configs.."
-    scp -r $GOSRC/gitlab.com/rosenpin/rosenpin.io/configs/*.yml server@rosenpin.io:/home/server/rosenpin.io/configs/
+    send-rosenpin.io $website_project_path/configs . 
+    echo "pushing resources.."
+    send-rosenpin.io $website_project_path/resources . 
     echo "running server.."
-    ssh-rosenpin "sudo -S deploy-rosenpin.io"
+    ssh-rosenpin "run-website"
     echo "Done!"
+}
+
+function terminal-name() {
+    ps -o comm= -p "$(($(ps -o ppid= -p "$(($(ps -o sid= -p "$$")))")))"
+}
+
+function send-rosenpin.io() {
+    if [ -z $1 ] | [ -z $2 ]; then
+        echo "must specify source and dest files"
+        return
+    fi
+
+    send-files $1 $WEBSITE:~/$2
 }

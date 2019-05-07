@@ -23,5 +23,3 @@ alias disk-usage-all='disk-usage *'
 #################################
 alias vim='nvim'
 alias vi='vim'
-
-source $HOME/.functions

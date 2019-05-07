@@ -167,12 +167,12 @@ bindcode 173 exec qdbus-qt4 org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlaye
 bindcode 75 exec /home/tomer/.scripts/switch_output.sh 
 
 # gaps
-gaps inner 10
-gaps outer 6
+gaps inner 32
+gaps outer 8
 
 # Hide title bar
 new_window none
 
 # Run initialization script
-exec sh /home/tomer/.scripts/initialize
+exec_always sh /home/tomer/.scripts/initialize
 

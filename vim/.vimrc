@@ -17,9 +17,10 @@ set autoread
 set scrolloff=3
 " Spell check
 setlocal spell spelllang=en_us
+set nospell " No spell to avoid conflicts with spelunker.vim 
 " Display all matching files
 set wildmenu
-" Tabs to spcaes
+" Tabs to spaces
 set expandtab
 " Auto indent
 set autoindent
@@ -31,6 +32,7 @@ set shiftwidth=4
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'bkad/CamelCaseMotion' " Camel case/snake case navigation
+Plugin 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python syntax highlighting
 Plugin 'SirVer/ultisnips' " Code snippets 
 Plugin 'NLKNguyen/papercolor-theme' " Theme
 Plugin 'VundleVim/Vundle.vim' " Plugins
@@ -43,11 +45,11 @@ Plugin 'christoomey/vim-tmux-navigator' "Tmux integration
 Plugin 'vim-airline/vim-airline' " Theme
 Plugin 'vim-airline/vim-airline-themes' " Theme
 Plugin 'scrooloose/syntastic' " Syntax errors checker
-Plugin 'Shougo/deoplete.nvim' " Auto complete
-Plugin 'zchee/deoplete-go', { 'do': 'make'} " Auto complete go plug in
 Plugin 'w0rp/ale' " Lint 
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy code finder
 Plugin 'sebdah/vim-delve' " Vim go debugger 
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'kamykn/spelunker.vim'
 call vundle#end()            
 
 " Set up theme
@@ -85,7 +87,6 @@ command! -bar -bang Q quit<bang>
 nnoremap ,s :vsplit<CR>
 nnoremap ,v :split<CR>
 
-" GO run shortcut
 map <Tab> <C-x><C-o>
 
 " Vim GO and related settings
@@ -94,7 +95,9 @@ set autowrite
 au FileType go nmap <F10> :GoCoverageToggle -short<cr>
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
-au FileType go nmap gr <Plug>(go-referres) 
+au FileType go nmap gr <Plug>(go-rename) 
+au FileType go nmap gd <Plug><go-def)
+au FileType go nmap gD <Plug>(go-referrers)
 " Declaration fuzzy finder for Golang
 au FileType go nmap gt :GoDeclsDir<cr> 
 " Edit tests
@@ -133,38 +136,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-
 " Ulti snip
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-e>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
-" deoplete
-if has('nvim')
-    let g:deoplete#enable_at_startup = 1
-endif
- 
-call deoplete#custom#option({
-    \ 'auto_complete': v:false,
-\ })
-
-" deoplete GO
-let g:python3_host_prog  = '/usr/bin/python3.7'
-let g:deoplete#sources#go#source_importer = 1
-let g:deoplete#sources#go#package_dot = 1
-let g:deoplete#sources#go#unimported_packages = 1
-let g:deoplete#sources#go#builtin_objects = 1
-let g:deoplete#sources#go#gocode_binary=$GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#pointer = 1
-
-" Disable deoplete when in multi cursor mode
-function! Multiple_cursors_before()
-    let b:deoplete_disable_auto_complete = 1
-endfunction
-
-function! Multiple_cursors_after()
-    let b:deoplete_disable_auto_complete = 0
-endfunction
 
 " Ale lint
 let g:ale_sign_error = '⤫'
@@ -182,6 +157,23 @@ map <silent> <S-w> <Plug>CamelCaseMotion_w
 map <silent> <S-b> <Plug>CamelCaseMotion_b
 map <silent> <S-e> <Plug>CamelCaseMotion_e
 
+" Vimux
+map <silent> vvr :VimuxPromptCommand<cr>
+map <silent> vvl :VimuxRunLastCommand<cr>
+
+" spelunker.vim
+let g:enable_splunkver_vim = 1
+nmap <C-g> Zl
+nmap <leader>g Zg
+
 " HTML
 autocmd FileType html
 \ setlocal formatprg=tidy\ -indent\ -quiet\ --show-errors\ 0\ --tidy-mark\ no\ --show-body-only\ auto
+
+" Remember last position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+set undodir=~/.vim/undodir
+set undofile

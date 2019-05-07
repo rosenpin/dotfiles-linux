@@ -25,3 +25,4 @@ source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 source ~/.zshuser
+source ~/.zshenv

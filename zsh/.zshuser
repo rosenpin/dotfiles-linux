@@ -12,8 +12,9 @@ export PATH=$PATH:$(go env GOPATH)/bin
 bindkey -e
 
 # Use my aliases
-source ~/.alias
+source $HOME/.alias
+source $HOME/.functions
 
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux -2
+if ! tmux info &> /dev/null; then
+    [[ $(terminal-name) == alacritty ]] && [ -z $TMUX ] && exec tmux -2
 fi
