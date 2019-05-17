@@ -50,6 +50,7 @@ Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy code finder
 Plugin 'sebdah/vim-delve' " Vim go debugger 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kamykn/spelunker.vim'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 call vundle#end()            
 
 " Set up theme
@@ -59,7 +60,8 @@ set background=dark
 colorscheme PaperColor
 
 " Nerdtree
-map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle %<CR>
 
 " Copy and paste to and from system clipboard
 noremap <Leader>y "+y

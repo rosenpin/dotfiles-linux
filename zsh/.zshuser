@@ -11,6 +11,9 @@ export PATH=$PATH:$(go env GOPATH)/bin
 # Emcas mode in terminal
 bindkey -e
 
+# Disable Ctrl+d
+set -o ignoreeof
+
 # Use my aliases
 source $HOME/.alias
 source $HOME/.functions

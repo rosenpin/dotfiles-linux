@@ -14,9 +14,12 @@ alias stop-vpn='sudo systemctl stop openvpn-client@TunnelBearUS.service'
 # ETC
 alias remove-git-cache='git rm -r --cached .'
 alias :q='exit'
+alias :Q='exit'
 alias c='clear'
 alias download-song='youtube-dl -x --audio-format mp3'
 alias disk-usage-all='disk-usage *'
+alias val='vim ~/.alias'
+alias sal='source ~/.sourcer'
 
 #################################
 #  Replace Programs I'm Used to #
