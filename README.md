@@ -21,3 +21,12 @@ git submodule update
 ```./install``` will stow all the dirs and install misc programs like the tmux plugin, zsh auto complete...
 
 Kill tmux, open it, press `prefix` + <kbd>I</kbd> 
+
+### Dependencies
+* z
+* zsh
+* fzf
+* tmux
+* rofi
+* oh-my-zsh
+* TODO: add the rest
