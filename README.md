@@ -29,4 +29,5 @@ Kill tmux, open it, press `prefix` + <kbd>I</kbd>
 * tmux
 * rofi
 * oh-my-zsh
+* ag
 * TODO: add the rest
