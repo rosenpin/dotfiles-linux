@@ -16,19 +16,19 @@ install(){
     mkdir -p $HOME/.local/share/rofi/themes/
     curl https://raw.githubusercontent.com/ricwtk/rofi-themes/master/input-emph-nobar.rasi -o $HOME/.local/share/rofi/themes/input-emph-nobar.rasi
 
-    if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom} ]; then
+    if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom} ]; then
         echo "ZSH_CUSTOM isn't configured. You must install zsh and oh-my-zsh first"
         return
     fi
 
     # ZSH spaceship theme
     echo "Installing spaceship theme"
-    git clone https://github.com/denysdovhan/spaceship-prompt.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt"
-    ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme"
+    git clone https://github.com/denysdovhan/spaceship-prompt.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/spaceship-prompt"
+    ln -s "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme" "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/spaceship.zsh-theme"
 
     # Auto complete
     echo "Installing zsh auto suggestions"
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
 install
