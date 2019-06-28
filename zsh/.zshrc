@@ -19,9 +19,15 @@ plugins=(
 # Oh my zsh
 source $ZSH/oh-my-zsh.sh
 
+# Interactive cd
+source $ZSH/custom/plugins/.zsh-interactive-cd.plugin.zsh
+
 #Auto suggestions
 source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# z for cd
+. /usr/share/z/z.sh
 
 # User configuration
 source ~/.zshuser

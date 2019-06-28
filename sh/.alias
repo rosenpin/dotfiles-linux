@@ -11,6 +11,11 @@ alias update-system='yay -Syu --noconfirm && upgrade_oh_my_zsh && sudo pvpn --up
 alias start-vpn='sudo systemctl start openvpn-client@TunnelBearUS.service'
 alias stop-vpn='sudo systemctl stop openvpn-client@TunnelBearUS.service'
 
+# Dirs
+alias d="cd $HOME/dotfiles"
+alias p="cd $HOME/Projects/"
+alias h="cd $HOME"
+
 # ETC
 alias remove-git-cache='git rm -r --cached .'
 alias :q='exit'
