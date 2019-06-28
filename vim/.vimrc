@@ -51,6 +51,8 @@ Plugin 'sebdah/vim-delve' " Vim go debugger
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kamykn/spelunker.vim'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'sbdchd/neoformat'
+Plugin 'flowtype/vim-flow'
 call vundle#end()            
 
 " Set up theme
@@ -138,6 +140,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Neoformat on save
+autocmd BufWritePre *.js Neoformat
+
 " Ulti snip
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-e>"
@@ -149,6 +154,13 @@ let g:ale_sign_warning = '⚠'
 
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
+
+" Disable ycam for ts files to fix conflicts with flow
+let g:ycm_filter_diagnostics = {
+  \ "javascript": {
+  \      "regex": [ "ts file" ],
+  \    }
+  \ }
 
 " Completion
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

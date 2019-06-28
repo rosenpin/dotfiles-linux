@@ -176,5 +176,7 @@ new_window none
 # Run initialization script
 exec_always sh /home/tomer/.scripts/initialize
 
+# Run the kdeconnect daemon
+exec --no-startup-id /usr/lib/kdeconnectd
 
 # vim:filetype=i3

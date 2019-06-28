@@ -20,4 +20,8 @@ compton -f --config $HOME/.config/compton.conf &
 
 #pkill redshift
 #redshift -m vidmode -PO 6500
-#redshift -m randr -l 32.111169:34.835021 &
+redshift -m vidmode -O 6500
+sleep 2
+killall redshift
+sleep 2
+redshift -m randr -l 32.111169:34.835021 &
