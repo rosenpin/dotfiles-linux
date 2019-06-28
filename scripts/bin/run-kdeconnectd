@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $(ps aux | ag "run-kdeconnectd" | ag -v ag | ag -v vim | wc -l) -gt 2 ]; 
+then
+    echo "Already running, exiting"
+    exit;
+fi
+
+while :; do
+    /usr/lib/kdeconnectd
+done
