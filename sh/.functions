@@ -56,7 +56,7 @@ open-in(){
 fag() {
   local file
 
-  file="$(ag --nobreak --noheading $@ | fzf -0 -1 --preview="open-in {}")"
+  file="$(ag --nobreak --noheading $@ | fzf --height=40 -0 -1 --preview="open-in {}" --preview-window=60%)"
 
   if [[ -n $file ]]
   then

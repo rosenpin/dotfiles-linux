@@ -3,8 +3,8 @@
 f=$(echo $1|cut -d":" -f1)
 l=$(echo $1|cut -d":" -f2)
 
-sl=$(expr $l - 5)
-fl=$(expr $l + 5)
+sl=$(expr $l - 10)
+fl=$(expr $l + 10)
 
 while [ $sl -lt 0 ]; do
     sl=$(expr $sl + 1)
