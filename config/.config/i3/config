@@ -145,7 +145,7 @@ bindcode 150 exec .config/i3/lock.sh
 bindsym $mod+Shift+m exec pavucontrol
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -theme input-emph-nobar -lines 8 -eh 2 -show-icons -font "Fira Code 16"
+bindsym $mod+d exec rofi -show run -theme input-emph-nobar -lines 5 -eh 2 -show-icons -font "Fira Code 16"
 
 # Firefox fix
 for_window [class="Firefox" instance="Toplevel"] floating enable

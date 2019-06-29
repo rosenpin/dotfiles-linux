@@ -11,11 +11,6 @@ install(){
     echo "Installing tmux plugin manager"
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-    # Rofi
-    echo "Installing rofi themes"
-    mkdir -p $HOME/.local/share/rofi/themes/
-    curl https://raw.githubusercontent.com/ricwtk/rofi-themes/master/input-emph-nobar.rasi -o $HOME/.local/share/rofi/themes/input-emph-nobar.rasi
-
     if [ ! -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom} ]; then
         echo "ZSH_CUSTOM isn't configured. You must install zsh and oh-my-zsh first"
         return
