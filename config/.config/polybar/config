@@ -48,7 +48,7 @@ font-2 = siji:pixelsize=10;1
 modules-left = bspwm i3
 modules-right = hdmi_pulseaudio xkeyboard date battery
 modules-center = hour
-tray-position = null
+tray-position = right
 tray-padding = 2
 tray-background = #77121212
 
