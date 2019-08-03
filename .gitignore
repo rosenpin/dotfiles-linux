@@ -4,3 +4,7 @@
 *.swp
 *.swo
 *com.*/
+vim/.vim/bundle/
+vim/.vim/spell/
+vim/.vim/undodir
+vim/.vim/.*
