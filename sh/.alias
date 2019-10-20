@@ -16,6 +16,9 @@ alias d="cd $HOME/dotfiles"
 alias p="cd $HOME/Projects/"
 alias h="cd $HOME"
 
+# GIT
+alias ggpush='git pushall'
+
 # ETC
 alias remove-git-cache='git rm -r --cached .'
 alias :q='exit'
