@@ -37,6 +37,8 @@ nmap <leader>g Zg
 
 " Folding
 nmap -- zc
-nmap == za
-nmap __ zC
-nmap ++ zA
+nmap == zo
+nmap __ zM
+nmap ++ zR
+
+nmap Z :w <CR>

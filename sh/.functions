@@ -116,6 +116,7 @@ da() {
 
   [ -n "$cid" ] && docker start "$cid" && docker attach "$cid"
 }
+
 # Select a running docker container to stop
 ds() {
   local cid

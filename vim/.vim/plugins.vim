@@ -24,6 +24,7 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'sbdchd/neoformat'
 Plugin 'flowtype/vim-flow'
 Plugin 'pangloss/vim-javascript'
+Plugin 'TaDaa/vimade'
 call vundle#end()            
 
 " Nerdtree
