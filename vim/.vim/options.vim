@@ -13,7 +13,7 @@ set autoread
 " Show at least one line before and after the current line
 set scrolloff=3
 " Spell check
-setlocal spell spelllang=en_us
+set spelllang=en
 " No spell to avoid conflicts with spelunker.vim 
 set nospell 
 " Display all matching files

@@ -7,7 +7,7 @@ Plugin 'SirVer/ultisnips' " Code snippets
 Plugin 'NLKNguyen/papercolor-theme' " Theme
 Plugin 'VundleVim/Vundle.vim' " Plugins
 Plugin 'fatih/vim-go' " Golang support 
-Plugin 'scrooloose/nerdtree' " File viewer and manager
+"Plugin 'scrooloose/nerdtree' " File viewer and manager
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim' " Files fuzzy finder 
 Plugin 'benmills/vimux' " Tmux integration
@@ -25,6 +25,9 @@ Plugin 'sbdchd/neoformat'
 Plugin 'flowtype/vim-flow'
 Plugin 'pangloss/vim-javascript'
 Plugin 'TaDaa/vimade'
+Plugin 'airblade/vim-rooter'
+Plugin 'tpope/vim-vinegar'
+Plugin 'markonm/traces.vim'
 call vundle#end()            
 
 " Nerdtree
