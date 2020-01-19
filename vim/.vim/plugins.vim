@@ -18,7 +18,6 @@ Plugin 'scrooloose/syntastic' " Syntax errors checker
 Plugin 'w0rp/ale' " Lint 
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy code finder
 Plugin 'sebdah/vim-delve' " Vim go debugger 
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'kamykn/spelunker.vim'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'sbdchd/neoformat'
@@ -27,6 +26,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'TaDaa/vimade'
 Plugin 'airblade/vim-rooter'
 Plugin 'tpope/vim-vinegar'
+Plugin 'Valloric/YouCompleteMe' " - incompetible with tabnine
 Plugin 'markonm/traces.vim'
 call vundle#end()            
 
