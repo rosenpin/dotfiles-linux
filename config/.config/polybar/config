@@ -26,13 +26,14 @@ tray-position = left
 tray-padding = 2
 tray-background = #00000000
 
-modules-left = 
+modules-left = spotify-prev spotify-play spotify-next
 modules-right = headphones date 
 modules-center = pomodoro
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 font-1 = "Noto Color Emoji:style=Regular:scale=10;2"
+
 font-0 = fixed:pixelsize=10;1
 font-2 = siji:pixelsize=10;1
 
@@ -46,7 +47,7 @@ line-color = #f00
 [bar/top]
 monitor = ${env:MONITOR}
 width = 100%
-height = 42 
+height = 38 
 fixed-center = true
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -217,7 +218,7 @@ label-volume = 🎧 %percentage%%
 
 [module/pomodoro]
 type = custom/script
-click-right = i2-gnome-pomodoro toggle
+click-right = i3-gnome-pomodoro toggle
 click-left = gnome-pomodoro
 exec = echo "$(i3-gnome-pomodoro status --always | cut -d":" -f1)m"
 interval = 10
@@ -228,4 +229,19 @@ type = custom/script
 click-left = date "+%H:%M:%S %d/%m"
 exec = date "+%H:%M:%S %d/%m"
 interval = 1
+
+[module/spotify-next]
+type = custom/script
+click-left = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+exec = echo ⏭
+
+[module/spotify-prev]
+type = custom/script
+click-left = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.prev
+exec = echo ⏮️
+
+[module/spotify-play]
+type = custom/script
+click-left = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+exec = echo "▶"
 
