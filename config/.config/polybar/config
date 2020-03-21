@@ -8,24 +8,51 @@
 ;=====================================================
 
 [colors]
-background = #67000000
-background-alt = #77121212
+background = #00000000
+background-alt = #22000000
 foreground = #dfdfdf
 foreground-alt = #00555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/rightm]
+[bar/bottombar]
 monitor = ${env:MONITOR}
 width = 100%
-height = 43 
-radius = 0.0
-fixed-center = false
+height = 24 
+bottom = true
+
+tray-position = left
+tray-padding = 2
+tray-background = #00000000
+
+modules-left = 
+modules-right = headphones date 
+modules-center = pomodoro
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+font-1 = "Noto Color Emoji:style=Regular:scale=10;2"
+font-0 = fixed:pixelsize=10;1
+font-2 = siji:pixelsize=10;1
+
+module-margin-right = 2 
+padding-left = 4
+padding-right = 4
+padding-bottom = 2
+line-size = 3
+line-color = #f00
+
+[bar/top]
+monitor = ${env:MONITOR}
+width = 100%
+height = 42 
+fixed-center = true
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 background = ${colors.background}
 foreground = ${colors.foreground}
+font-1 = "Noto Color Emoji:style=Regular:scale=10;2"
 
 line-size = 3
 line-color = #f00
@@ -33,8 +60,8 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 4
+padding-right = 4
 padding-bottom = 0
 margin-bottom = 0
 
@@ -42,15 +69,11 @@ module-margin-left = 0
 module-margin-right = 2 
 
 font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
-modules-right = hdmi_pulseaudio xkeyboard date battery
+modules-right =  hdmi_pulseaudio xkeyboard battery
 modules-center = hour
-tray-position = right
-tray-padding = 2
-tray-background = #77121212
 
 [module/xwindow]
 type = internal/xwindow
@@ -180,6 +203,29 @@ margin-bottom = 5
 type = internal/pulseaudio
 sink = alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1
 interval = 5
-label-muted = 🔇 muted
+label-muted = 🖥️🔇
 label-muted-foreground = #ff0000
+label-volume = 🖥️ %percentage%%
+
+[module/headphones]
+type = internal/pulseaudio
+sink = bluez_sink.04_5D_4B_DD_64_CD.a2dp_sink
+interval = 5
+label-muted = 🎧🔇
+label-muted-foreground = #ff0000
+label-volume = 🎧 %percentage%%
+
+[module/pomodoro]
+type = custom/script
+click-right = i2-gnome-pomodoro toggle
+click-left = gnome-pomodoro
+exec = echo "$(i3-gnome-pomodoro status --always | cut -d":" -f1)m"
+interval = 10
+
+
+[module/chour]
+type = custom/script
+click-left = date "+%H:%M:%S %d/%m"
+exec = date "+%H:%M:%S %d/%m"
+interval = 1
 

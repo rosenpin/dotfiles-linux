@@ -28,6 +28,7 @@ Plugin 'airblade/vim-rooter'
 Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/YouCompleteMe' " - incompetible with tabnine
 Plugin 'markonm/traces.vim'
+Plugin 'psliwka/vim-smoothie'
 call vundle#end()            
 
 " Nerdtree
