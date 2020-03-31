@@ -12,6 +12,12 @@ replace-all() {
     echo $(grep -nrI $3)
 }
 
+sshpi() {
+    local OLDTERM=$TERM
+    export TERM=ansi 
+    ssh pi@pi; export TERM=$OLDTERM
+}
+
 alias ssh-rosenpin="ssh $WEBSITE"
 
 deploy-rosenpin.io() {

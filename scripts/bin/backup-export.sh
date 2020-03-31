@@ -1,6 +1,6 @@
 #!/bin/sh
 # File: /usr/local/bin/backup-export.sh
-EXTERNAL_DRIVE="/run/media/tomer/Seagate Expansion Drive/Backups"
+EXTERNAL_DRIVE="/media/tomer/EXTSSD/Backups"
 ARCHIVE_FILE="$1"
 
 if [ -z "$1" ]; then

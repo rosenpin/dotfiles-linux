@@ -1,12 +1,15 @@
 set $winKey Mod1
 set $mod Mod4
 
+# only relevant to a fork of i3 that supports rounded corners, I no longer use it
+# border_radius 10
+
 font pango:Fira Code 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -167,12 +170,11 @@ bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
-
 # Set Fn+F9 to change sound output device
 bindcode 75 exec /home/tomer/.scripts/switch_output.sh 
 
 # gaps
-gaps inner 8
+gaps inner 12
 gaps outer 4
 
 # Hide title bar
@@ -181,7 +183,3 @@ new_window none
 # Run initialization script
 exec_always sh /home/tomer/.scripts/initialize
 
-# Run the kdeconnect daemon
-exec --no-startup-id /usr/lib/kdeconnectd
-
-# vim:filetype=i3

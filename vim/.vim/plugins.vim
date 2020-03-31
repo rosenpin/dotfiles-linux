@@ -53,7 +53,7 @@ au Filetype go nmap ga <Plug>(go-alternate-vertical)
 
 " GO options
 let g:go_fmt_command = "goimports"
-let g:go_auto_sameids = 1
+"let g:go_auto_sameids = 1
 
 " GO highlighting 
 let g:go_auto_type_info = 1

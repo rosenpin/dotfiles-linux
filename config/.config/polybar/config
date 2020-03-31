@@ -25,6 +25,8 @@ bottom = true
 tray-position = left
 tray-padding = 2
 tray-background = #00000000
+;override-redirect = true
+;wm-restack = i3
 
 modules-left = spotify-prev spotify-play spotify-next
 modules-right = headphones date 
@@ -72,7 +74,7 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm i3
+modules-left = i3
 modules-right =  hdmi_pulseaudio xkeyboard battery
 modules-center = hour
 
@@ -220,8 +222,9 @@ label-volume = 🎧 %percentage%%
 type = custom/script
 click-right = i3-gnome-pomodoro toggle
 click-left = gnome-pomodoro
-exec = echo "$(i3-gnome-pomodoro status --always | cut -d":" -f1)m"
-interval = 10
+click-middle = i3-gnome-pomodoro start_stop
+exec = echo "$(i3-gnome-pomodoro status --always --no-seconds --icon-text "⏰")"
+interval = 1
 
 
 [module/chour]
