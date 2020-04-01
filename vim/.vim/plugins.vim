@@ -1,35 +1,50 @@
 " Set up the plugins
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'bkad/CamelCaseMotion' " Camel case/snake case navigation
-Plugin 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python syntax highlighting
-Plugin 'SirVer/ultisnips' " Code snippets 
-Plugin 'NLKNguyen/papercolor-theme' " Theme
-Plugin 'VundleVim/Vundle.vim' " Plugins
-Plugin 'fatih/vim-go' " Golang support 
-"Plugin 'scrooloose/nerdtree' " File viewer and manager
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim' " Files fuzzy finder 
-Plugin 'benmills/vimux' " Tmux integration
-Plugin 'christoomey/vim-tmux-navigator' "Tmux integration
-Plugin 'vim-airline/vim-airline' " Theme
-Plugin 'vim-airline/vim-airline-themes' " Theme
-Plugin 'scrooloose/syntastic' " Syntax errors checker
-Plugin 'w0rp/ale' " Lint 
-Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy code finder
-Plugin 'sebdah/vim-delve' " Vim go debugger 
-Plugin 'kamykn/spelunker.vim'
-Plugin 'PotatoesMaster/i3-vim-syntax'
-Plugin 'sbdchd/neoformat'
-Plugin 'flowtype/vim-flow'
-Plugin 'pangloss/vim-javascript'
-Plugin 'TaDaa/vimade'
-Plugin 'airblade/vim-rooter'
-Plugin 'tpope/vim-vinegar'
-Plugin 'Valloric/YouCompleteMe' " - incompetible with tabnine
-Plugin 'markonm/traces.vim'
-Plugin 'psliwka/vim-smoothie'
-call vundle#end()            
+call plug#begin('~/.vim/plugged')
+Plug 'bkad/CamelCaseMotion' " Camel case/snake case navigation
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python syntax highlighting
+Plug 'SirVer/ultisnips' " Code snippets 
+Plug 'NLKNguyen/papercolor-theme' " Theme
+Plug 'fatih/vim-go' " Golang support 
+"Plug 'scrooloose/nerdtree' " File viewer and manager
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim' " Files fuzzy finder 
+Plug 'benmills/vimux' " Tmux integration
+Plug 'christoomey/vim-tmux-navigator' "Tmux integration
+Plug 'vim-airline/vim-airline' " Theme
+Plug 'vim-airline/vim-airline-themes' " Theme
+Plug 'scrooloose/syntastic' " Syntax errors checker
+Plug 'w0rp/ale' " Lint 
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy code finder
+Plug 'sebdah/vim-delve' " Vim go debugger 
+Plug 'kamykn/spelunker.vim'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'sbdchd/neoformat'
+Plug 'flowtype/vim-flow'
+Plug 'pangloss/vim-javascript'
+Plug 'TaDaa/vimade'
+Plug 'airblade/vim-rooter'
+Plug 'tpope/vim-vinegar'
+"Plug 'Valloric/YouCompleteMe' " - incompetible with tabnine
+Plug 'markonm/traces.vim'
+Plug 'psliwka/vim-smoothie'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+call plug#end()
+
+" Coc
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <C-n>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Nerdtree
 let NERDTreeShowHidden=1
@@ -108,11 +123,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:enable_splunkver_vim = 1
 
 " Disable YCM for ts files to fix conflicts with flow
-let g:ycm_filter_diagnostics = {
-  \ "javascript": {
-  \      "regex": [ "ts file" ],
-  \    }
-  \ }
+" let g:ycm_filter_diagnostics = {
+"   \ "javascript": {
+"   \      "regex": [ "ts file" ],
+"   \    }
+"   \ }
 
 """""""""""
 "   ETC   "

@@ -1,11 +1,11 @@
 #!/bin/bash
 
 if [[ -z $1 ]]; then
-    vim ~/.vimrc
+    nvim ~/.vimrc
 else
     path="$HOME/.vim/$1.vim"
     if [[ -f $path ]]; then
-        vim $path
+        nvim $path
     else
         echo "vimrc file not found $path"
     fi

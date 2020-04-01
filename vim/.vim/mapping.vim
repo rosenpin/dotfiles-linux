@@ -30,7 +30,7 @@ nnoremap <silent> <C-Space> :FZF<CR>
 
 " Completion
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <C-N> <C-x><C-o>
+" inoremap <C-N> <C-x><C-o>
 
 nmap <C-g> Zl
 nmap <leader>g Zg
