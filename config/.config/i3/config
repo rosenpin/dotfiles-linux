@@ -93,12 +93,15 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 #Assign apps to workspaces
+assign [class="jetbrains-studio"] 3
+assign [class="Firefox"] 3
+
+assign [class="Pavucontrol"] 4
+assign [class="Bluetooth Devices"] 4
 assign [class="Spotify"] 4
 
 assign [class="Steam"] 5
 assign [class="steam"] 5
-assign [class="Pavucontrol"] 4
-assign [class="jetbrains-studio"] 3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -144,16 +147,19 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 bindsym $mod+shift+x exec .config/i3/lock.sh 
 bindcode 150 exec .config/i3/lock.sh 
 
-#Pavucontrol
+# Pavucontrol for sound and sinks controls
 bindsym $mod+Shift+m exec pavucontrol
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run -theme input-emph-nobar -lines 5 -eh 2 -show-icons -font "Fira Code 16"
 
-# Firefox fix
+# Firefox popup fix
 for_window [class="Firefox" instance="Toplevel"] floating enable
 
-#Screenshots
+# Chrome popup fix
+for_window [class="Chromium" window_role="pop-up"] floating enable
+
+# Screenshots
 bindsym --release Print exec escrotum --clipboard --select --selection-delay 300 
 
 # Assign volume buttons
@@ -170,7 +176,7 @@ bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
-# Set Fn+F9 to change sound output device
+# Set F9 to change sound output device
 bindcode 75 exec /home/tomer/.scripts/switch_output.sh 
 
 # gaps
