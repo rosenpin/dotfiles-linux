@@ -16,8 +16,9 @@ sh $HOME/.scripts/caps_lock_remap &
 feh --randomize --bg-fill $HOME/Pictures/Walls/* &
 
 # Start compton
-# picom -f -m -c -C --config $HOME/.config/compton.conf &
-picom -r 36 -c -f --config $HOME/.config/compton.conf &
+ # picom -f -m -c -C --config $HOME/.config/compton.conf &
+pkill picom
+picom -r 12 -c -C -f --config $HOME/.config/compton.conf &
 
 
 # Redshift
