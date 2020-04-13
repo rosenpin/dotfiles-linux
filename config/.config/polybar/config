@@ -228,7 +228,7 @@ interval = 1
 
 [module/agenda]
 type = custom/script
-exec = cd /media/LARGE_SSD/Projects/Python/i3-agenda/ && python i3-agenda.py
+exec = i3-agenda -c ~/.google_credentials.json
 click-left = chromium https://calendar.google.com/calendar/r/day
 interval = 60
 
