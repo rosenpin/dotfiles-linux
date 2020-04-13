@@ -75,7 +75,7 @@ font-2 = "Noto Color Emoji:style=Regular:scale=11;1"
 font-0 = fixed:pixelsize=10;1
 
 modules-left = i3
-modules-right =  hdmi_pulseaudio xkeyboard battery agenda
+modules-right = agenda hdmi_pulseaudio xkeyboard battery
 modules-center = hour  
 
 [module/xwindow]
@@ -228,10 +228,9 @@ interval = 1
 
 [module/agenda]
 type = custom/script
-exec = i3-agenda -c ~/.google_credentials.json
+exec = i3-agenda -c ~/.google_credentials.json -ttl 60
 click-left = chromium https://calendar.google.com/calendar/r/day
 interval = 60
-
 
 [module/chour]
 type = custom/script

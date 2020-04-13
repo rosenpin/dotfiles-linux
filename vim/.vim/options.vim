@@ -15,7 +15,7 @@ set scrolloff=3
 " Spell check
 set spelllang=en
 " No spell to avoid conflicts with spelunker.vim 
-set nospell 
+set spell 
 " Display all matching files
 set wildmenu
 " Tabs to spaces
