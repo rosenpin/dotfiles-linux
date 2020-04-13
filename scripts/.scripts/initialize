@@ -30,3 +30,6 @@ redshift -m randr -l 32.111169:34.835021 &
 
 # Kdeconnectd
 ~/bin/run-kdeconnectd
+
+# Bluetooth applet
+bluman-applet &

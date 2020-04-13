@@ -29,7 +29,8 @@ Plug 'markonm/traces.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
+Plug 'rust-lang/rust.vim'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 " Coc
@@ -140,4 +141,8 @@ map <silent> vvl :VimuxRunLastCommand<cr>
 map <silent> <S-w> <Plug>CamelCaseMotion_w
 map <silent> <S-b> <Plug>CamelCaseMotion_b
 map <silent> <S-e> <Plug>CamelCaseMotion_e
+
+" Tagbar
+nmap <C-t> :TagbarToggle<CR>
+let g:tagbar_autofocus=1
 

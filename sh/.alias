@@ -15,9 +15,10 @@ alias stop-vpn='sudo systemctl stop openvpn-client@TunnelBearUS.service'
 alias d="cd $HOME/dotfiles"
 alias p="cd $HOME/Projects/"
 alias h="cd $HOME"
+alias aoa="cd $HOME/Projects/Android/AlwaysOnAMOLEDbit"
 
 # GIT
-alias ggpush='git pushall'
+alias ggpusha='git pushall'
 
 # ETC
 alias remove-git-cache='git rm -r --cached .'

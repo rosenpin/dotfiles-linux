@@ -30,14 +30,14 @@ tray-background = #00000000
 
 modules-left = spotify-prev spotify-play spotify-next
 modules-right = headphones date 
-modules-center = pomodoro
+modules-center = pomodoro 
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-font-1 = "Noto Color Emoji:style=Regular:scale=10;2"
 
+font-1 = "Noto Sans Hebrew:style=Rgular:scale=20;1"
+font-2 = "Noto Color Emoji:style=Regular:scale=11;1"
 font-0 = fixed:pixelsize=10;1
-font-2 = siji:pixelsize=10;1
 
 module-margin-right = 2 
 padding-left = 4
@@ -55,7 +55,6 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 background = ${colors.background}
 foreground = ${colors.foreground}
-font-1 = "Noto Color Emoji:style=Regular:scale=10;2"
 
 line-size = 3
 line-color = #f00
@@ -71,12 +70,13 @@ margin-bottom = 0
 module-margin-left = 0
 module-margin-right = 2 
 
+font-1 = "Noto Sans Hebrew:style=Rgular:scale=20;1"
+font-2 = "Noto Color Emoji:style=Regular:scale=11;1"
 font-0 = fixed:pixelsize=10;1
-font-2 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-right =  hdmi_pulseaudio xkeyboard battery
-modules-center = hour
+modules-right =  hdmi_pulseaudio xkeyboard battery agenda
+modules-center = hour  
 
 [module/xwindow]
 type = internal/xwindow
@@ -225,6 +225,12 @@ click-left = gnome-pomodoro
 click-middle = i3-gnome-pomodoro start_stop
 exec = echo "$(i3-gnome-pomodoro status --always --no-seconds --icon-text "⏰")"
 interval = 1
+
+[module/agenda]
+type = custom/script
+exec = cd /media/LARGE_SSD/Projects/Python/i3-agenda/ && python i3-agenda.py
+click-left = chromium https://calendar.google.com/calendar/r/day
+interval = 60
 
 
 [module/chour]
