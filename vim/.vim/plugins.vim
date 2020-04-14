@@ -27,6 +27,7 @@ Plug 'tpope/vim-vinegar'
 "Plug 'Valloric/YouCompleteMe' " - incompetible with tabnine
 Plug 'markonm/traces.vim'
 Plug 'psliwka/vim-smoothie'
+Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'rust-lang/rust.vim'
@@ -146,3 +147,6 @@ map <silent> <S-e> <Plug>CamelCaseMotion_e
 nmap <C-t> :TagbarToggle<CR>
 let g:tagbar_autofocus=1
 
+" Markdown
+let vim_markdown_preview_github=1
+let vim_markdown_preview_browser='chromium'

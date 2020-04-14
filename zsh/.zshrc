@@ -29,6 +29,7 @@ source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # User configuration
 source ~/.zshuser
 source ~/.zshenv
+source ~/.zshkeybindings
 
 # pip zsh completion start
 function _pip_completion {

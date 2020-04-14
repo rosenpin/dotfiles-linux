@@ -228,7 +228,7 @@ interval = 1
 
 [module/agenda]
 type = custom/script
-exec = i3-agenda -c ~/.google_credentials.json -ttl 60
+exec = i3-agenda -c ~/.google_credentials.json -ttl 30
 click-left = chromium https://calendar.google.com/calendar/r/day
 interval = 60
 
