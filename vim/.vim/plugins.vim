@@ -18,14 +18,10 @@ Plug 'ctrlpvim/ctrlp.vim' " Fuzzy code finder
 Plug 'sebdah/vim-delve' " Vim go debugger 
 Plug 'kamykn/spelunker.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'sbdchd/neoformat'
-Plug 'flowtype/vim-flow'
 Plug 'pangloss/vim-javascript'
 Plug 'TaDaa/vimade'
 Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-vinegar'
-"Plug 'Valloric/YouCompleteMe' " - incompetible with tabnine
-Plug 'markonm/traces.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
