@@ -1,7 +1,25 @@
 #!/bin/bash
 
+install-gnome-pomodoro(){
+    command -v gnome-pomodoro > /dev/null && 
+    (
+        cd $(mktemp -d) &&
+        $(which git) clone https://github.com/kantord/i3-gnome-pomodoro &&
+        cd i3-gnome-pomodoro &&
+        sudo $(which pip3) install -r requirements.txt --ignore-installed &&
+        sudo rm /usr/bin/i3-gnome-pomodoro >& /dev/null;
+        sudo cp pomodoro-client.py /usr/bin/i3-gnome-pomodoro &&
+        /usr/bin/i3-gnome-pomodoro status
+    ) || echo "Installation failed. Please make sure you have gnome-pomodoro installed."
+}
+
 echo $ZSH_CUSTOM
 install(){
+    echo "Installing dependencies"
+    yay -S noto-fonts ttf-fira-code neovim tmux z zsh fzf rofi ag gnome-pomodoro
+    sudo pip install i3-agenda
+    install-gnome-pomodoro
+
     echo "Installing dotfiles using gnu stow"
     for dirname in */ ; do stow "$dirname"; done
 
@@ -25,5 +43,7 @@ install(){
     echo "Installing zsh auto suggestions"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
+
+
 
 install
