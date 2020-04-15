@@ -27,10 +27,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left  30 px
+bindsym $mod+Shift+j move down  30 px
+bindsym $mod+Shift+k move up    30 px
+bindsym $mod+Shift+l move right 30 px
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -112,16 +112,16 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym j resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 25 px or 25 ppt
+    bindsym k resize shrink height 25 px or 25 ppt
+    bindsym j resize grow height 25 px or 25 ppt
+    bindsym l resize grow width 25 px or 25 ppt
 
     # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 25 px or 25 ppt
+    bindsym Down resize shrink height 25 px or 25 ppt
+    bindsym Up resize grow height 25 px or 25 ppt
+    bindsym Right resize grow width 25 px or 25 ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -160,7 +160,8 @@ for_window [class="Firefox" instance="Toplevel"] floating enable
 for_window [class="Chromium" window_role="pop-up"] floating enable
 
 # Screenshots
-bindsym --release Print exec escrotum --clipboard --select --selection-delay 300 
+bindsym --release Shift+Print exec maim -s | xclip -selection clipboard -t image/png  
+bindsym --release Print exec maim -s ~/Pictures/ScreenShots/screenshot-$(date +%s).png
 
 # Assign volume buttons
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
