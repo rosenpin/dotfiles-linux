@@ -40,3 +40,5 @@ au FocusGained * :redraw!
 set undodir=~/.vim/undodir
 set undofile
 
+" set relative number so you can jump easily to lines
+set relativenumber
