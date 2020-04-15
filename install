@@ -16,7 +16,7 @@ install-gnome-pomodoro(){
 echo $ZSH_CUSTOM
 install(){
     echo "Installing dependencies"
-    yay -S noto-fonts ttf-fira-code neovim tmux z zsh fzf rofi ag gnome-pomodoro
+    yay -S noto-fonts ttf-fira-code neovim tmux z zsh fzf rofi the_silver_searcher gnome-pomodoro
     sudo pip install i3-agenda
     install-gnome-pomodoro
 
