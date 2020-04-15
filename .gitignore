@@ -9,5 +9,6 @@ vim/.vim/plugged/
 vim/.vim/spell/
 vim/.vim/undodir
 vim/.vim/.*
+vim/.vim/autoload
 tmux/.tmux/resurrect
 tmux/.tmux/plugins
