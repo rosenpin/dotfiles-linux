@@ -15,10 +15,12 @@ install-gnome-pomodoro(){
 
 echo $ZSH_CUSTOM
 install(){
-    echo "Installing dependencies"
-    yay -S noto-fonts ttf-fira-code neovim tmux z zsh fzf rofi the_silver_searcher gnome-pomodoro
-    sudo pip install i3-agenda
-    install-gnome-pomodoro
+    if [[ ! -z $1 ]]; then
+        echo "Installing dependencies"
+        yay -S noto-fonts ttf-fira-code neovim tmux z zsh fzf rofi the_silver_searcher gnome-pomodoro
+        sudo pip install i3-agenda
+        install-gnome-pomodoro
+    fi
 
     echo "Installing dotfiles using gnu stow"
     for dirname in */ ; do stow "$dirname"; done
