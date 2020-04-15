@@ -5,6 +5,9 @@
 *.swo
 *com.*/
 vim/.vim/bundle/
+vim/.vim/plugged/
 vim/.vim/spell/
 vim/.vim/undodir
 vim/.vim/.*
+tmux/.tmux/resurrect
+tmux/.tmux/plugins
