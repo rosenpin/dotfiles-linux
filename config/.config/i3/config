@@ -179,6 +179,8 @@ bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 # Set F9 to change sound output device
 bindcode 75 exec /home/tomer/.scripts/switch_output.sh 
 
+bindsym $mod+p exec ~/.scripts/restart_polybar.sh
+
 # gaps
 gaps inner 12
 gaps outer 4

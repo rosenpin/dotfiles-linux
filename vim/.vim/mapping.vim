@@ -42,3 +42,12 @@ nmap __ zM
 nmap ++ zR
 
 nmap Z :w <CR>
+
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap p "_dP
+
