@@ -188,7 +188,7 @@ for_window [class=".*"] border pixel 0
 
 gaps inner 16
 gaps outer 48
-gaps vertical 16
+gaps vertical 0
 
 # Hide title bar
 new_window none
