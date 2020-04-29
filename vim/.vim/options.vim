@@ -14,8 +14,11 @@ set autoread
 set scrolloff=3
 " Spell check
 set spelllang=en
-" No spell to avoid conflicts with spelunker.vim 
+" No spell to avoid conflicts with spelunker.vim
 set spell 
+" Set spell error color
+hi clear SpellBad
+hi SpellBad ctermfg=Red ctermbg=00 guifg=#ff0000 guibg=#000000
 " Display all matching files
 set wildmenu
 " Tabs to spaces

@@ -1,7 +1,6 @@
 " Set up the plugins
 call plug#begin('~/.vim/plugged')
 Plug 'bkad/CamelCaseMotion' " Camel case/snake case navigation
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python syntax highlighting
 Plug 'SirVer/ultisnips' " Code snippets 
 Plug 'NLKNguyen/papercolor-theme' " Theme
 Plug 'fatih/vim-go' " Golang support 
@@ -28,6 +27,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Coc

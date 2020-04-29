@@ -17,7 +17,7 @@ echo $ZSH_CUSTOM
 install(){
     if [[ ! -z $1 ]]; then
         echo "Installing dependencies"
-        yay -S noto-fonts ttf-fira-code neovim tmux z zsh fzf rofi the_silver_searcher gnome-pomodoro otf-openmoji spotify i3-gaps polybar alacritty
+        yay -S noto-fonts ttf-fira-code neovim tmux z zsh fzf rofi the_silver_searcher gnome-pomodoro otf-openmoji spotify i3-gaps polybar alacritty dunst
         sudo pip install i3-agenda
         install-gnome-pomodoro
     fi
