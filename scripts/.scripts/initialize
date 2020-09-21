@@ -33,3 +33,6 @@ redshift -m randr -l 32.111169:34.835021 &
 
 # Bluetooth applet
 bluman-applet &
+
+# Start gnome-pomodoro in background
+gnome-pomodoro --no-default-window

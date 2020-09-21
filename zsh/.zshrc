@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+DISABLE_AUTO_UPDATE="true"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 ZSH_THEME="spaceship"
