@@ -1,4 +1,5 @@
 export OUTPUT_DEVICE=$(~/.scripts/get_sink.sh)
+echo $OUTPUT_DEVICE
 
 set -x
 
