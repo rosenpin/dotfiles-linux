@@ -8,7 +8,7 @@ pacmd set-sink-mute 1 false &
 xbindkeys &
 
 # Show status bar
-sh $HOME/.scripts/restart_polybar.sh &
+sh $HOME/.scripts/restart_polybar.sh top bottom &
 
 sh $HOME/.scripts/caps_lock_remap &
 
