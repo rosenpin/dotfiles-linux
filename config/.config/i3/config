@@ -193,9 +193,9 @@ bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 # Set F9 to change sound output device
-bindcode 75 exec /home/tomer/.scripts/switch_output.sh 
+bindcode 75 exec /home/tomer/.scripts/switch_output.sh && ~/.scripts/restart_polybar.sh top
 
-bindsym $mod+p exec ~/.scripts/restart_polybar.sh
+bindsym $mod+p exec ~/.scripts/restart_polybar.sh top bottom
 
 # gaps
 # gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>

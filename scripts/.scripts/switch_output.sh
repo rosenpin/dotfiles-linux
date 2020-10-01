@@ -19,3 +19,5 @@ echo "$swap"
 
 pacmd set-default-sink $swap &> /dev/null
 for i in ${inputs[*]}; do pacmd move-sink-input $i $swap &> /dev/null; done
+
+
