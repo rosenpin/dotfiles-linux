@@ -1,5 +1,6 @@
 set $winKey Mod1
 set $mod Mod4
+set $defterm alacritty
 
 # only relevant to a fork of i3 that supports rounded corners, I no longer use it
 # border_radius 10
@@ -9,7 +10,7 @@ font pango:Fira Code 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $defterm
 
 # kill focused window
 bindsym $mod+q kill
@@ -52,7 +53,7 @@ bindsym $mod+Shift+f focus parent; fullscreen; focus child
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Shift+s layout stacking
-bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+t layout tabbed
 bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
@@ -160,6 +161,9 @@ bindcode 150 exec .config/i3/lock.sh
 
 # Pavucontrol for sound and sinks controls
 bindsym $mod+Shift+m exec pavucontrol
+
+# WiFi Menu
+bindsym $mod+Shift+w exec xterm -e "sudo wifi-menu"
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run -theme input-emph-nobar -lines 5 -eh 2 -show-icons -font "Fira Code 16"
