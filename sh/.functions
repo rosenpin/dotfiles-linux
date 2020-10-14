@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias send-files='rsync --delete-after --delete-excluded --progress -zr'
+alias send-files='rsync --cvs-exclude --delete-after --delete-excluded --progress -zr'
 
 disk-usage(){
     du -hs $@ | sort -h

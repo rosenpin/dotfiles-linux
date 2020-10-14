@@ -174,6 +174,10 @@ for_window [class="Firefox" instance="Toplevel"] floating enable
 # Chrome popup fix
 for_window [class="Chromium" window_role="pop-up"] floating enable
 
+# Spaces chrome plugin
+for_window [title="Spaces"] floating enable
+for_window [title="Spaces" window_role="pop-up"] floating disable
+
 # Screenshots
 bindsym --release Shift+Print exec maim -s | xclip -selection clipboard -t image/png  
 bindsym --release Print exec maim -s ~/Pictures/ScreenShots/screenshot-$(date +%s).png
