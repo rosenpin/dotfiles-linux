@@ -29,10 +29,13 @@ sleep 2
 redshift -m randr -l 32.111169:34.835021 &
 
 # Kdeconnectd
-~/bin/run-kdeconnectd
+~/bin/run-kdeconnectd &
 
 # Bluetooth applet
-bluman-applet &
+blueman-applet &
+
+# Wifi applet
+nm-applet &
 
 # Start gnome-pomodoro in background
 gnome-pomodoro --no-default-window
