@@ -4,7 +4,7 @@ Plug 'bkad/CamelCaseMotion' " Camel case/snake case navigation
 Plug 'SirVer/ultisnips' " Code snippets 
 Plug 'NLKNguyen/papercolor-theme' " Theme
 Plug 'fatih/vim-go' " Golang support 
-"Plug 'scrooloose/nerdtree' " File viewer and manager
+Plug 'scrooloose/nerdtree' " File viewer and manager
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " Files fuzzy finder 
 Plug 'benmills/vimux' " Tmux integration
