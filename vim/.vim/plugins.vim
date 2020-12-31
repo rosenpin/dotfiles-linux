@@ -29,6 +29,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " Coc
@@ -53,7 +54,9 @@ map <C-n> :NERDTreeToggle %<CR>
 """""""""""""""""
 "     Python    "
 """""""""""""""""
-" TODO
+" Python jedi
+let g:jedi#goto_command = "gd"
+
 
 """""""""""""""""
 "     GOLANG    "
@@ -153,3 +156,4 @@ let g:tagbar_autofocus=1
 " Markdown
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='chromium'
+
