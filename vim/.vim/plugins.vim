@@ -4,7 +4,7 @@ Plug 'bkad/CamelCaseMotion' " Camel case/snake case navigation
 Plug 'SirVer/ultisnips' " Code snippets 
 Plug 'NLKNguyen/papercolor-theme' " Theme
 Plug 'fatih/vim-go' " Golang support 
-"Plug 'scrooloose/nerdtree' " File viewer and manager
+Plug 'scrooloose/nerdtree' " File viewer and manager
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " Files fuzzy finder 
 Plug 'benmills/vimux' " Tmux integration
@@ -29,6 +29,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " Coc
@@ -53,7 +54,9 @@ map <C-n> :NERDTreeToggle %<CR>
 """""""""""""""""
 "     Python    "
 """""""""""""""""
-" TODO
+" Python jedi
+let g:jedi#goto_command = "gd"
+
 
 """""""""""""""""
 "     GOLANG    "
@@ -153,3 +156,4 @@ let g:tagbar_autofocus=1
 " Markdown
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='chromium'
+
