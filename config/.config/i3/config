@@ -205,8 +205,8 @@ bindsym $mod+p exec ~/.scripts/restart_polybar.sh top bottom
 # gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
 for_window [class=".*"] border pixel 0
 
-gaps inner 16
-gaps outer 48
+gaps inner 10
+gaps outer 4
 gaps vertical 0
 
 # Hide title bar
