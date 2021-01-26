@@ -30,6 +30,8 @@ alias disk-usage-all='disk-usage *'
 alias val='vim ~/.alias'
 alias vfunc='vim ~/.functions'
 alias sal='source ~/.sourcer'
+alias amoled='cd ~/Projects/Android/AlwaysOnAMOLEDbit'
+alias apps='cd ~/Projects/Android'
 
 #################################
 #  Replace Programs I'm Used to #
