@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [[ -z $(i3-gnome-pomodoro status) ]]; then
+    notify-send -u critical -a "Pomodoro" "Pomodoro Is Disabled" "Please enable Pomodoro and resume your work"
+fi
