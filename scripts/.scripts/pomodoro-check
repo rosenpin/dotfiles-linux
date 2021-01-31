@@ -1,5 +1,31 @@
 #!/bin/bash
 
-if [[ -z $(i3-gnome-pomodoro status) ]]; then
-    notify-send -u critical -a "Pomodoro" "Pomodoro Is Disabled" "Please enable Pomodoro and resume your work"
+set -x
+
+# if notify-send or i3-gnome-pomodor fails due to X related issues, run  this script at login once
+# #!/bin/sh
+# 
+# touch $HOME/.dbus/Xdbus
+# chmod 600 $HOME/.dbus/Xdbus
+# env | grep DBUS_SESSION_BUS_ADDRESS > $HOME/.dbus/Xdbus
+# echo 'export DBUS_SESSION_BUS_ADDRESS' >> $HOME/.dbus/Xdbus
+# 
+# exit 0 
+
+
+
+# then uncomment the following lines to source the result 
+#if [ -r "$HOME/.dbus/Xdbus" ]; then
+#  . "$HOME/.dbus/Xdbus"
+#fi
+
+
+# Alternatively, add the following line before you call the script in cron
+# XDG_RUNTIME_DIR=/run/user/$(id -u)
+
+if [[ -z $(python /usr/bin/i3-gnome-pomodoro status) ]]; then
+    echo "showing pomodoro warning"
+    $(which notify-send) -u critical -a "Pomodoro" "Pomodoro Is Disabled" "Please enable Pomodoro and resume your work"
+else
+    echo "pomodoro is running"
 fi
