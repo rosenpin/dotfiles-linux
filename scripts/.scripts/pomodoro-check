@@ -23,9 +23,16 @@ set -x
 # Alternatively, add the following line before you call the script in cron
 # XDG_RUNTIME_DIR=/run/user/$(id -u)
 
-if [[ -z $(python /usr/bin/i3-gnome-pomodoro status) ]]; then
-    echo "showing pomodoro warning"
-    $(which notify-send) -u critical -a "Pomodoro" "Pomodoro Is Disabled" "Please enable Pomodoro and resume your work"
-else
-    echo "pomodoro is running"
-fi
+
+check-pomodoro(){
+    local output=$(python /usr/bin/i3-gnome-pomodoro status)
+
+    if [[ -z $output ]] || [[ $output = *PAUSED* ]]; then
+        echo "showing pomodoro warning"
+        $(which notify-send) -u critical -a "Pomodoro" "Pomodoro Is Disabled" "Please enable Pomodoro and resume your work"
+    else
+        echo "pomodoro is running"
+    fi
+}
+
+check-pomodoro
