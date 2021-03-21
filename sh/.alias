@@ -5,7 +5,7 @@ alias adb-restart='adb kill-server && adb start-server'
 # Arch specific
 alias remove-shit='sudo pacman -R $(pacman -Qdtq) && yay -Sc'
 alias clear-lock='sudo rm -rf /var/lib/pacman.db.lck'
-alias update-system='yay -Syyu --noconfirm && upgrade_oh_my_zsh'
+alias update-system='yay -Syyu --noconfirm && omz update'
 
 # TunnelBear VPN
 alias start-vpn='sudo systemctl start openvpn-client@TunnelBearUS.service'
