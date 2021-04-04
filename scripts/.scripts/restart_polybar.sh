@@ -3,7 +3,6 @@ echo $OUTPUT_DEVICE
 
 set -x
 
-
 if [[ ! -z $1 ]]; then
     kill -9 $(pgrep -f topbar)
     export MONITOR=$(xrandr -q | grep " connected" | cut -d ' ' -f1 | tail -n1) && polybar  --config="$HOME/.config/polybar/config.ini" topbar &

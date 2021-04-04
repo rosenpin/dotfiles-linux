@@ -29,7 +29,7 @@ check-pomodoro(){
 
     if [[ -z $output ]] || [[ $output = *PAUSED* ]]; then
         echo "showing pomodoro warning"
-        $(which notify-send) -u critical -a "Pomodoro" "Pomodoro Is Disabled" "Please enable Pomodoro and resume your work"
+        $(which notify-send) -t 60000 -u low -a "Pomodoro" "Pomodoro Is Disabled" "Please enable Pomodoro and resume your work"
     else
         echo "pomodoro is running"
     fi
